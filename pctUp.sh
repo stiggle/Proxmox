@@ -56,7 +56,7 @@ function pctUpdate {
 
 # If there is no content for ID_LIKE, check the ID field
     if [ "$inLIKE" = "" ]; then
-        inLIKE=`/usr/sbin/pct exec 101 -- grep ID= /etc/os-release | grep -v _ID= | cut -c4- | sed -e '/\"//g'` 
+        inLIKE=`/usr/sbin/pct exec $inID -- grep ID= /etc/os-release | grep -v _ID= | cut -c4- | sed -e '/\"//g'` 
     fi
 
 # Run the OS specific update
